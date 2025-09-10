@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Rockfall Prediction System Design System - Futuristic Geological Monitoring
+All colors MUST be HSL. */
+
+@layer base {
+  :root {
+    /* Dark theme geological monitoring palette */
+    --background: 220 15% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 15% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Vibrant glowing orange primary */
+    --primary: 20 95% 55%;
+    --primary-foreground: 220 15% 8%;
+    --primary-glow: 20 100% 65%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 220 15% 18%;
+    --accent-foreground: 0 0% 95%;
+
+    /* Risk status colors */
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 95%;
+    
+    --warning: 45 95% 55%;
+    --warning-foreground: 220 15% 8%;
+    
+    --success: 120 65% 50%;
+    --success-foreground: 220 15% 8%;
+    
+    --info: 200 85% 55%;
+    --info-foreground: 220 15% 8%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 15%;
+    --ring: 20 95% 55%;
+
+    --radius: 0.75rem;
+
+    /* Geological monitoring specific colors */
+    --geo-critical: 0 85% 60%;
+    --geo-warning: 45 95% 55%;
+    --geo-safe: 120 65% 50%;
+    --geo-data: 200 85% 55%;
+    
+    /* Gradients and effects */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-danger: linear-gradient(135deg, hsl(var(--geo-critical)), hsl(0 85% 50%));
+    --gradient-warning: linear-gradient(135deg, hsl(var(--geo-warning)), hsl(45 95% 45%));
+    --gradient-safe: linear-gradient(135deg, hsl(var(--geo-safe)), hsl(120 65% 40%));
+    
+    /* Glow effects */
+    --glow-primary: 0 0 20px hsl(var(--primary) / 0.3);
+    --glow-critical: 0 0 20px hsl(var(--geo-critical) / 0.3);
+    --glow-warning: 0 0 20px hsl(var(--geo-warning) / 0.3);
+    --glow-safe: 0 0 20px hsl(var(--geo-safe) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: box-shadow 0.3s ease;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Sidebar colors for navigation */
+    --sidebar-background: 220 15% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 20 95% 55%;
+    --sidebar-primary-foreground: 220 15% 8%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 20 95% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: url('./assets/topo-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: hsl(var(--background) / 0.85);
+    backdrop-filter: blur(1px);
+    z-index: -1;
+  }
+}
+
+@layer components {
+  /* Risk status utility classes */
+  .status-critical {
+    @apply text-red-500 border-red-500/20 bg-red-500/10;
+  }
+  
+  .status-warning {
+    @apply text-yellow-500 border-yellow-500/20 bg-yellow-500/10;
+  }
+  
+  .status-safe {
+    @apply text-green-500 border-green-500/20 bg-green-500/10;
+  }
+  
+  .status-info {
+    @apply text-blue-500 border-blue-500/20 bg-blue-500/10;
+  }
+  
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-critical {
+    box-shadow: var(--glow-critical);
+  }
+  
+  .glow-warning {
+    box-shadow: var(--glow-warning);
+  }
+  
+  .glow-safe {
+    box-shadow: var(--glow-safe);
+  }
+  
+  /* Card variants */
+  .card-elevated {
+    @apply bg-card/90 backdrop-blur-sm border border-border/50 shadow-lg;
+  }
+  
+  .card-glow {
+    @apply card-elevated;
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.1), 0 4px 12px hsl(var(--background) / 0.3);
+  }
+}
