@@ -11,7 +11,7 @@ The system helps monitor mining or slope environments and classify risk levels a
 ---
 
 ## 🚀 Features
-- **AI-powered Risk Analysis** (Hugging Face model integration).  
+- **AI-powered Risk Analysis**.  
 - **SMS Alerts** using Twilio API.  
 - **Interactive Dashboard** with risk categories and visualizations.  
 - **Authentication system** with login.  
